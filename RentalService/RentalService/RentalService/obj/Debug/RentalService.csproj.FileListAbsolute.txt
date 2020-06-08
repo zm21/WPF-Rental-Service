@@ -20,3 +20,5 @@ D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\Rent
 D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\bin\Debug\MaterialDesignThemes.Wpf.xml
 D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\RentalService.csproj.CopyComplete
 D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\App.baml
+D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\MsgBox.g.cs
+D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\MsgBox.baml
