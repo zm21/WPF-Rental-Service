@@ -92,13 +92,13 @@ namespace RentalService
 
         private void ShowSubMenu(StackPanel subMenu)
         {
-            if (SubRentMenu.Visibility == Visibility.Collapsed)
+            if (subMenu.Visibility == Visibility.Collapsed)
             {
                 HideSubMenu();
                 subMenu.Visibility = Visibility.Visible;
             }
             else
-                SubRentMenu.Visibility = Visibility.Collapsed;
+                subMenu.Visibility = Visibility.Collapsed;
         }
         private void ButtonRent_Click(object sender, RoutedEventArgs e)
         {
