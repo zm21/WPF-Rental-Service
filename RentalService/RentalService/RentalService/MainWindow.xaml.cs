@@ -70,12 +70,12 @@ namespace RentalService
                     if (admin.Passwd == passwdbox.Password)
                     {
                         chb_alogin.IsChecked = false;
-                        //AdminForm rentalSerivce = new AdminForm(admin);
-                        //this.Hide();
-                        //if (rentalSerivce.ShowDialog() == DialogResult.Retry)
-                        //    this.Show();
-                        //else
-                        //    this.Close();
+                        AdminMenu rentalSerivce = new AdminMenu(admin);
+                        this.Hide();
+                        if (rentalSerivce.ShowDialog() == true)
+                            this.Show();
+                        else
+                            this.Close();
                     }
                     else
                     {
@@ -119,11 +119,6 @@ namespace RentalService
                         msgBox.ShowDialog();
                     }
                 }
-        }
-
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("asfd");
         }
 
         private void ButtonSignUP_Click(object sender, RoutedEventArgs e)

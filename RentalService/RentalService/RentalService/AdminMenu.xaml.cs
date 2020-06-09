@@ -17,14 +17,13 @@ using System.Windows.Threading;
 namespace RentalService
 {
     /// <summary>
-    /// Interaction logic for RentalServiceMenu.xaml
+    /// Interaction logic for AdminMenu.xaml
     /// </summary>
-    public partial class RentalServiceMenu : Window
+    public partial class AdminMenu : Window
     {
-        public User user;
-        public static string path_to_cars = "cars.xml";
+        private Admin admin;
         DispatcherTimer timer;
-        public RentalServiceMenu(User user)
+        public AdminMenu(Admin admin)
         {
             InitializeComponent();
             timer = new DispatcherTimer();
@@ -33,10 +32,8 @@ namespace RentalService
             timer.Start();
             Timer_Tick(this, EventArgs.Empty);
             HideSubMenu();
-            this.user = user;
-            DockPanel_UserInfo.DataContext = this.user;
+            this.admin = admin;
         }
-
         private void Timer_Tick(object sender, EventArgs e)
         {
             DateTime cur_date = DateTime.Now;
@@ -68,8 +65,6 @@ namespace RentalService
         {
             if (SubRentMenu.Visibility == Visibility.Visible)
                 SubRentMenu.Visibility = Visibility.Collapsed;
-            if (SubAccountSettings.Visibility == Visibility.Visible)
-                SubAccountSettings.Visibility = Visibility.Collapsed;
         }
 
         private void ShowSubMenu(StackPanel subMenu)
@@ -85,16 +80,19 @@ namespace RentalService
         private void ButtonRent_Click(object sender, RoutedEventArgs e)
         {
             ShowSubMenu(SubRentMenu);
-        }
-        private void ButtonAccountSettings_Click(object sender, RoutedEventArgs e)
-        {
-            ShowSubMenu(SubAccountSettings);
+
         }
 
         private void ButtonLogout_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
             this.Close();
+        }
+
+        private void RemoveUser_Click(object sender, RoutedEventArgs e)
+        {
+            RentalDesktop.Visibility = Visibility.Hidden;
+            Desktop.Children.Add(new RemoveUser());
         }
     }
 }

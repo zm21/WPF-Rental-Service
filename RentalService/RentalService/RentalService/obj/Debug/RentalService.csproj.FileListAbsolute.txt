@@ -24,3 +24,7 @@ D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\Rent
 D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\MsgBox.baml
 D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\RentalServiceMenu.g.cs
 D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\RentalServiceMenu.baml
+D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\AdminMenu.g.cs
+D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\AdminMenu.baml
+D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\RemoveUser.g.cs
+D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\RemoveUser.baml

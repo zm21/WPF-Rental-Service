@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\App.xaml
-392291152
+5-830126547
 
-161754414841
+18-1264732300
 17876489097
-MainWindow.xaml;MsgBox.xaml;RentalServiceMenu.xaml;
+AdminMenu.xaml;MainWindow.xaml;MsgBox.xaml;RemoveUser.xaml;RentalServiceMenu.xaml;
 
-False
+True
 
