@@ -19,14 +19,22 @@ namespace RentalService
     /// </summary>
     public partial class MsgBox : Window
     {
-        public MsgBox()
+        public MsgBox(string title, string message)
         {
             InitializeComponent();
+            MsgTitle.Content = title;
+            Message.Text = message;
         }
 
         private void BtnMsgBoxClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+            this.DragMove();
         }
     }
 }

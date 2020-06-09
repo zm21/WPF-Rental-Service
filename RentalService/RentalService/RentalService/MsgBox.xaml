@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:RentalService"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MsgBox" Height="180" Width="360" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterOwner">
+        Title="MsgBox" Height="180" Width="360" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterOwner" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
     <DockPanel>
         <DockPanel DockPanel.Dock="Top" LastChildFill="False" Background="#27AAF0">
-            <Label VerticalAlignment="Center" Margin="10,0">Title</Label>
+            <Label Name="MsgTitle" VerticalAlignment="Center" Margin="10,0">Title</Label>
             <Button DockPanel.Dock="Right" BorderBrush="Transparent" Background="Transparent" Click="BtnMsgBoxClose_Click">
                 <Grid>
                     <materialDesign:PackIcon Kind="WindowClose"/>
@@ -20,6 +20,7 @@
             </Button>
         </DockPanel>
         <TextBox
+            Name="Message"
                 Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
                 Margin="10"
                 VerticalAlignment="Top"

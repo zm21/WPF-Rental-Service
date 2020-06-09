@@ -1,0 +1,114 @@
+﻿<Window x:Class="RentalService.RentalServiceMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RentalService"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="RentalServiceMenu" Height="600" Width="1040" WindowStyle="None" MinWidth="650" MouseLeftButtonDown="Window_MouseLeftButtonDown" WindowStartupLocation="CenterScreen">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+    <DockPanel LastChildFill="False">
+        <DockPanel DockPanel.Dock="Left" Background="#27AAF0" LastChildFill="False">
+            <Label DockPanel.Dock="Top" Margin="10,0" Foreground="#DDFFFFFF" FontFamily="Corbel Light" FontSize="38" >Rental</Label>
+            <Label Margin="10,0" Foreground="#DDFFFFFF" FontFamily="Corbel Light" FontSize="38" DockPanel.Dock="Top" >Service</Label>
+            <Button DockPanel.Dock="Top" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0,4,0,0">
+                <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
+                    <materialDesign:PackIcon Height="24" Width="24"  Kind="HomeOutline" DockPanel.Dock="Left" Foreground="White" VerticalAlignment="Top" Margin="0,5,0,0"/>
+                    <Label DockPanel.Dock="Left" FontSize="18" Foreground="White">Home</Label>
+                </DockPanel>
+            </Button>
+            <Button DockPanel.Dock="Top" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0,4,0,0" Click="ButtonRent_Click">
+                <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
+                    <materialDesign:PackIcon Height="24" Width="24"  Kind="RentACar" DockPanel.Dock="Left" Foreground="White" VerticalAlignment="Top" Margin="0,0,0,5"/>
+                    <Label DockPanel.Dock="Left" FontSize="18" Foreground="White">Rent</Label>
+                </DockPanel>
+            </Button>
+            <StackPanel DockPanel.Dock="Top" Name="SubRentMenu" Margin="0" Background="#FF009FF3">
+                <materialDesign:TransitionEffect ></materialDesign:TransitionEffect>
+                <Button Padding="30,0,0,0" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0">
+                    <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
+                        <materialDesign:PackIcon Height="24" Width="24"  Kind="FileDocumentBoxSearchOutline" DockPanel.Dock="Left" Foreground="White" VerticalAlignment="Top" Margin="0,5,0,0"/>
+                        <Label DockPanel.Dock="Left" FontSize="18" Foreground="White">Cars</Label>
+                    </DockPanel>
+                </Button>
+                <Button Padding="31,0,0,0" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0">
+                    <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
+                        <materialDesign:PackIcon Height="24" Width="24"  Kind="KeyVariant" DockPanel.Dock="Left" Foreground="White" VerticalAlignment="Top" Margin="0,0,0,5"/>
+                        <Label DockPanel.Dock="Left" FontSize="18" Foreground="White">My rented cars</Label>
+                    </DockPanel>
+                </Button>
+            </StackPanel>
+            <Button DockPanel.Dock="Top" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0,4,0,0">
+                <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
+                    <materialDesign:PackIcon Height="24" Width="24"  Kind="CreditCards" DockPanel.Dock="Left" Foreground="White" VerticalAlignment="Top" Margin="0,0,0,5"/>
+                    <Label DockPanel.Dock="Left" FontSize="18" Foreground="White">Replish balance</Label>
+                </DockPanel>
+            </Button>
+            <Button DockPanel.Dock="Top" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0,4,0,0" Click="ButtonAccountSettings_Click">
+                <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
+                    <materialDesign:PackIcon Height="24" Width="24"  Kind="ShieldAccount" DockPanel.Dock="Left" Foreground="White" VerticalAlignment="Top" Margin="0,0,0,5"/>
+                    <Label DockPanel.Dock="Left" FontSize="18" Foreground="White">Account settings</Label>
+                </DockPanel>
+            </Button>
+            <StackPanel DockPanel.Dock="Top" Name="SubAccountSettings" Margin="0" Background="#FF009FF3">
+                <Button Padding="30,0,0,0" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0">
+                    <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
+                        <materialDesign:PackIcon Height="24" Width="24"  Kind="PasswordReset" DockPanel.Dock="Left" Foreground="White" VerticalAlignment="Top" Margin="0,5,0,0"/>
+                        <Label DockPanel.Dock="Left" FontSize="18" Foreground="White">Change password</Label>
+                    </DockPanel>
+                </Button>
+                <Button Padding="32,0,0,0" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0">
+                    <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
+                        <materialDesign:PackIcon Height="24" Width="24"  Kind="EmailResend" DockPanel.Dock="Left" Foreground="White" VerticalAlignment="Top" Margin="0,0,0,5"/>
+                        <Label DockPanel.Dock="Left" FontSize="18" Foreground="White">Change email</Label>
+                    </DockPanel>
+                </Button>
+            </StackPanel>
+            <Button DockPanel.Dock="Bottom" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0,4,0,0" Click="ButtonLogout_Click">
+                <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
+                    <materialDesign:PackIcon Height="24" Width="24"  Kind="ExitToApp" DockPanel.Dock="Left" Foreground="White" VerticalAlignment="Top" Margin="0,5,0,0" RenderTransformOrigin="0.5,0.5">
+                        <materialDesign:PackIcon.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="1" ScaleX="-1"/>
+                                <SkewTransform AngleY="0" AngleX="0"/>
+                                <RotateTransform Angle="0"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </materialDesign:PackIcon.RenderTransform>
+                    </materialDesign:PackIcon>
+                    <Label DockPanel.Dock="Left" FontSize="18" Foreground="White">Logout</Label>
+                </DockPanel>
+            </Button>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Top" Background="#1276B1" LastChildFill="False">
+            <Button DockPanel.Dock="Right" BorderBrush="Transparent" Background="Transparent" Click="BtnCloseWindow">
+                <Grid>
+                    <materialDesign:PackIcon Kind="WindowClose" Foreground="White"/>
+                </Grid>
+            </Button>
+            <Button DockPanel.Dock="Right" BorderBrush="Transparent" Background="Transparent" Click="BtnMaximizeWindow">
+                <Grid>
+                    <materialDesign:PackIcon Kind="WindowMaximize" Foreground="White"/>
+                </Grid>
+            </Button>
+            <Button DockPanel.Dock="Right" BorderBrush="Transparent" Background="Transparent" Click="BtnMinimizeWindow">
+                <Grid>
+                    <materialDesign:PackIcon Kind="WindowMinimize" Foreground="White"/>
+                </Grid>
+            </Button>
+        </DockPanel>
+        <Grid DockPanel.Dock="Top" Height="80" Background="#27AAF0">
+            <!--<MediaElement Source="backgroundpanel.mp4" Stretch="UniformToFill" UnloadedBehavior="Play"/>-->
+            <DockPanel LastChildFill="False" Background="Transparent">
+                <Ellipse Height="64" Width="64" Fill="#FFDEE0CC" Margin="5" DockPanel.Dock="Right">
+                </Ellipse>
+                <Label DockPanel.Dock="Top" HorizontalAlignment="Right" Margin="10,5" FontSize="18" Foreground="White">user</Label>
+                <Label DockPanel.Dock="Right" Margin="0,5,10,5" FontSize="18" Foreground="White">0</Label>
+                <Label DockPanel.Dock="Right" Margin="0,5,10,5" FontSize="18" Foreground="White">Your balance:</Label>
+            </DockPanel>
+        </Grid>
+    </DockPanel>
+</Window>

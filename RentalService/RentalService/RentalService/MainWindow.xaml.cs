@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -24,7 +25,6 @@ namespace RentalService
     /// </summary>
     public partial class MainWindow : Window
     {
-        PersonModel personModel = new PersonModel();
         public static string users_path = @"users/";
         public static string admins_path = @"admins/";
         public static string last_userId = @"users/LastUserID";
@@ -33,7 +33,6 @@ namespace RentalService
         {
             registerMViewModel = new RegisterMViewModel();
             InitializeComponent();
-            //this.DataContext = personModel;
             SignUP.DataContext = registerMViewModel;
         }
 
@@ -47,7 +46,7 @@ namespace RentalService
         {
             LOGIN.Visibility = Visibility.Hidden;
             SignUP.Visibility = Visibility.Visible;
-            MsgBox msgBox = new MsgBox();
+            MsgBox msgBox = new MsgBox("Test", "Some message");
             msgBox.Owner = this;
             msgBox.ShowDialog();
         }
@@ -57,42 +56,90 @@ namespace RentalService
             LOGIN.Visibility = Visibility.Visible;
             SignUP.Visibility = Visibility.Hidden;
         }
-    }
-    public class PersonModel : IDataErrorInfo
-    {
-        public string Name { get; set; }
-        public int Age { get; set; }
-        public string Position { get; set; }
-        public string this[string columnName]
+
+        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            get
+            bool is_admin_try = false;
+            if (chb_alogin.IsChecked==true)
             {
-                string error = string.Empty;
-                switch (columnName)
+                is_admin_try = true;
+                if (File.Exists(admins_path + logTxtBox_login.Text))
                 {
-                    case "Age":
-                        if ((Age < 0) || (Age > 100))
-                        {
-                            error = "Возраст должен быть больше 0 и меньше 100";
-                        }
-                        break;
-                    case "Name":
-                        {
-                            var email_reg = new Regex(@"^[a-z,A-Z,0-9](\.?[a-z,A-Z,0-9]){5,}@[a-z]{2,}\.(com|net|ua|ru)$");
-                            if (!email_reg.IsMatch(Name))
-                                error = "Wrong mail";
-                        }
-                        break;
-                    case "Position":
-                        //Обработка ошибок для свойства Position
-                        break;
+                    Admin admin = new Admin();
+                    admin.Deserialize(admins_path + logTxtBox_login.Text);
+                    if (admin.Passwd == passwdbox.Password)
+                    {
+                        chb_alogin.IsChecked = false;
+                        //AdminForm rentalSerivce = new AdminForm(admin);
+                        //this.Hide();
+                        //if (rentalSerivce.ShowDialog() == DialogResult.Retry)
+                        //    this.Show();
+                        //else
+                        //    this.Close();
+                    }
+                    else
+                    {
+                        MsgBox msgBox = new MsgBox("Authorization error", "Wrong password!");
+                        msgBox.Owner = this;
+                        msgBox.ShowDialog();
+                    }
                 }
-                return error;
+                else
+                {
+                    chb_alogin.IsChecked = false;
+                    MsgBox msgBox = new MsgBox("Authorization error", "No user with this login was found!");
+                    msgBox.Owner = this;
+                    msgBox.ShowDialog();
+                }
             }
+            if (!is_admin_try)
+                if (!File.Exists(users_path + logTxtBox_login.Text))
+                {
+                    MsgBox msgBox = new MsgBox("Authorization error", "No user with this login was found!");
+                    msgBox.Owner = this;
+                    msgBox.ShowDialog();
+                }
+                else
+                {
+                    User user = new User();
+                    user.Deserialize(users_path + logTxtBox_login.Text);
+                    if (user.Passwd == passwdbox.Password)
+                    {
+                        RentalServiceMenu rentalSerivce = new RentalServiceMenu(user);
+                        this.Hide();
+                        if (rentalSerivce.ShowDialog() == true)
+                            this.Show();
+                        else
+                            this.Close();
+                    }
+                    else
+                    {
+                        MsgBox msgBox = new MsgBox("Authorization error", "Wrong password!");
+                        msgBox.Owner = this;
+                        msgBox.ShowDialog();
+                    }
+                }
         }
-        public string Error
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            get { throw new NotImplementedException(); }
+            MessageBox.Show("asfd");
+        }
+
+        private void ButtonSignUP_Click(object sender, RoutedEventArgs e)
+        {
+            using (var writer = new StreamWriter("emails/emails", true))
+                writer.WriteLine(registerMViewModel.RegisterModel.Email);
+            User user = new User(registerMViewModel.RegisterModel.Login, registerMViewModel.RegisterModel.Email, registerMViewModel.RegisterModel.ConfirmPasswd);
+            user.Serialize();
+            RentalServiceMenu rentalSerivce = new RentalServiceMenu(user);
+            LOGIN.Visibility = Visibility.Visible;
+            SignUP.Visibility = Visibility.Hidden;
+            this.Hide();
+            if (rentalSerivce.ShowDialog() == true)
+                this.Show();
+            else
+                this.Close();
         }
     }
 }
