@@ -6,5 +6,7 @@
     {
         event ClosingDelegate Closing;
         event MessageDelegate OpenMsg;
+        void Close();
+        void ShowMsg(string title, string msg);
     }
 }

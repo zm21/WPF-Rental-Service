@@ -14,7 +14,7 @@
         <DockPanel DockPanel.Dock="Left" Background="#27AAF0" LastChildFill="False">
             <Label DockPanel.Dock="Top" Margin="10,0" Foreground="#DDFFFFFF" FontFamily="Corbel Light" FontSize="38" >Rental</Label>
             <Label Margin="10,0" Foreground="#DDFFFFFF" FontFamily="Corbel Light" FontSize="38" DockPanel.Dock="Top" >Service</Label>
-            <Button DockPanel.Dock="Top" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0,4,0,0">
+            <Button Name="btn_Home" DockPanel.Dock="Top" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0,4,0,0" Click="Btn_Home_Click">
                 <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
                     <materialDesign:PackIcon Height="24" Width="24"  Kind="HomeOutline" DockPanel.Dock="Left" Foreground="White" VerticalAlignment="Top" Margin="0,5,0,0"/>
                     <Label DockPanel.Dock="Left" FontSize="18" Foreground="White">Home</Label>
@@ -54,13 +54,13 @@
                 </DockPanel>
             </Button>
             <StackPanel DockPanel.Dock="Top" Name="SubAccountSettings" Margin="0" Background="#FF009FF3">
-                <Button Padding="30,0,0,0" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0">
+                <Button Name="btn_ChangePasswd" Padding="30,0,0,0" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0" Click="Btn_ChangePasswd_Click">
                     <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
                         <materialDesign:PackIcon Height="24" Width="24"  Kind="PasswordReset" DockPanel.Dock="Left" Foreground="White" VerticalAlignment="Top" Margin="0,5,0,0"/>
                         <Label DockPanel.Dock="Left" FontSize="18" Foreground="White">Change password</Label>
                     </DockPanel>
                 </Button>
-                <Button Padding="32,0,0,0" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0">
+                <Button Name="btn_ChangeEmail" Padding="32,0,0,0" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0" Click="Btn_ChangeEmail_Click">
                     <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
                         <materialDesign:PackIcon Height="24" Width="24"  Kind="EmailResend" DockPanel.Dock="Left" Foreground="White" VerticalAlignment="Top" Margin="0,0,0,5"/>
                         <Label DockPanel.Dock="Left" FontSize="18" Foreground="White">Change email</Label>

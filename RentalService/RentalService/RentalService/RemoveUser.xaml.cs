@@ -67,8 +67,8 @@ namespace RentalService
 
         private void Button_Click(object sender, RoutedEventArgs e) => Close();
 
-        private void Close() => Closing.Invoke();
+        public void Close() => Closing.Invoke();
 
-        private void ShowMsg(string title, string msg) => OpenMsg.Invoke(title, msg);
+        public void ShowMsg(string title, string msg) => OpenMsg.Invoke(title, msg);
     }  
 }

@@ -24,6 +24,7 @@ namespace RentalService
         public User user;
         public static string path_to_cars = "cars.xml";
         DispatcherTimer timer;
+        private UserControl ActiveControl;
         public RentalServiceMenu(User user)
         {
             InitializeComponent();
@@ -90,11 +91,49 @@ namespace RentalService
         {
             ShowSubMenu(SubAccountSettings);
         }
-
+        private void ShowMsg(string title, string msg)
+        {
+            MsgBox msgBox = new MsgBox(title, msg);
+            msgBox.Owner = this;
+            msgBox.ShowDialog();
+        }
+        private void CloseActiveControl()
+        {
+            ActiveControl = null;
+            Desktop.Children.Clear();
+            RentalDesktop.Visibility = Visibility.Visible;
+        }
         private void ButtonLogout_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
             this.Close();
+        }
+
+        private void Btn_Home_Click(object sender, RoutedEventArgs e)
+        {
+            CloseActiveControl();
+        }
+
+        private void Btn_ChangeEmail_Click(object sender, RoutedEventArgs e)
+        {
+            OpenUserControl(new ChangeEmail(user));
+        }
+        private void OpenUserControl(UserControl userControl)
+        {
+            if (userControl is IChildWindow)
+            {
+                (userControl as IChildWindow).Closing += CloseActiveControl;
+                (userControl as IChildWindow).OpenMsg += ShowMsg;
+            }
+            Desktop.Children.Clear();
+            RentalDesktop.Visibility = Visibility.Hidden;
+            Desktop.Children.Add(userControl);
+            ActiveControl = userControl;
+        }
+
+        private void Btn_ChangePasswd_Click(object sender, RoutedEventArgs e)
+        {
+            OpenUserControl(new ChangePassword(user));
         }
     }
 }
