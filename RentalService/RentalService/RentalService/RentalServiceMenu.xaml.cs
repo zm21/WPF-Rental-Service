@@ -1,4 +1,5 @@
-﻿using RentalService.Users;
+﻿using RentalService.Transport;
+using RentalService.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace RentalService
         public static string path_to_cars = "cars.xml";
         DispatcherTimer timer;
         private UserControl ActiveControl;
+        private RentalCarViewModel rentalCarViewModel;
         public RentalServiceMenu(User user)
         {
             InitializeComponent();
@@ -36,6 +38,10 @@ namespace RentalService
             HideSubMenu();
             this.user = user;
             DockPanel_UserInfo.DataContext = this.user;
+            rentalCarViewModel = new RentalCarViewModel();
+            rentalCarViewModel.DeserializeCars();
+            rentalCarViewModel.UpdateCarsStatus();
+            Desktop.DataContext = rentalCarViewModel;
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -134,6 +140,16 @@ namespace RentalService
         private void Btn_ChangePasswd_Click(object sender, RoutedEventArgs e)
         {
             OpenUserControl(new ChangePassword(user));
+        }
+
+        private void Btn_ReplishBalance_Click(object sender, RoutedEventArgs e)
+        {
+            OpenUserControl(new ReplishBalance(user));
+        }
+
+        private void Btn_Cars_Click(object sender, RoutedEventArgs e)
+        {
+            OpenUserControl(new RentCars());
         }
     }
 }

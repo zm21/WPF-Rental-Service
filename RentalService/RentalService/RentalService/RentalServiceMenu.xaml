@@ -28,7 +28,7 @@
             </Button>
             <StackPanel DockPanel.Dock="Top" Name="SubRentMenu" Margin="0" Background="#FF009FF3">
                 <materialDesign:TransitionEffect ></materialDesign:TransitionEffect>
-                <Button Padding="30,0,0,0" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0">
+                <Button Name="btn_Cars" Padding="30,0,0,0" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0" Click="Btn_Cars_Click">
                     <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
                         <materialDesign:PackIcon Height="24" Width="24"  Kind="FileDocumentBoxSearchOutline" DockPanel.Dock="Left" Foreground="White" VerticalAlignment="Top" Margin="0,5,0,0"/>
                         <Label DockPanel.Dock="Left" FontSize="18" Foreground="White">Cars</Label>
@@ -41,7 +41,7 @@
                     </DockPanel>
                 </Button>
             </StackPanel>
-            <Button DockPanel.Dock="Top" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0,4,0,0">
+            <Button Name="btn_ReplishBalance" DockPanel.Dock="Top" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0,4,0,0" Click="Btn_ReplishBalance_Click">
                 <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
                     <materialDesign:PackIcon Height="24" Width="24"  Kind="CreditCards" DockPanel.Dock="Left" Foreground="White" VerticalAlignment="Top" Margin="0,0,0,5"/>
                     <Label DockPanel.Dock="Left" FontSize="18" Foreground="White">Replish balance</Label>
@@ -105,7 +105,7 @@
                 <Ellipse Height="64" Width="64" Fill="#FFDEE0CC" Margin="5" DockPanel.Dock="Right">
                 </Ellipse>
                 <Label Content="{Binding Login}" DockPanel.Dock="Top" HorizontalAlignment="Right" Margin="10,5,10,0" FontSize="18" Foreground="White"></Label>
-                <Label DockPanel.Dock="Right" Margin="0,0,10,5" FontSize="18" Foreground="White">0</Label>
+                <Label Content="{Binding Balance}" DockPanel.Dock="Right" Margin="0,0,10,5" FontSize="18" Foreground="White"></Label>
                 <Label DockPanel.Dock="Right" Margin="0,0,10,5" FontSize="18" Foreground="White">Your balance:</Label>
             </DockPanel>
         </Grid>

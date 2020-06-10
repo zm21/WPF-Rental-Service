@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:RentalService"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
+             xmlns:controls="clr-namespace:Scar.Common.WPF.Controls;assembly=Scar.Common.WPF.Controls.NumericUpDown"
              Height="Auto" Width="Auto">
     <Grid>
         <Grid>
@@ -22,18 +23,23 @@
                         <Border Margin="156,50,0,0" BorderBrush="#1276B1" Background="#009FF3" Width="400" Height="170" BorderThickness="2" CornerRadius="5">
                             <DockPanel LastChildFill="False">
                                 <Border Background="#2F2F31" Height="40" DockPanel.Dock="Top" Margin="0,40,0,0"></Border>
-                                <TextBox HorizontalAlignment="Right" Name="card_CVV2_CVC2" Foreground="White" DockPanel.Dock="Top" materialDesign:HintAssist.Hint="CVV2/CVC2" Width="65" Height="25" Margin="0,10,5,0" CaretBrush="#FF005DFF" Background="#1179B5"></TextBox>
+                                <TextBox HorizontalAlignment="Right"  MaxLength="3" Name="card_CVV2_CVC2" Foreground="White" DockPanel.Dock="Top" materialDesign:HintAssist.Hint="CVV2/CVC2" Width="65" Height="25" Margin="0,10,5,0" CaretBrush="#FF005DFF" Background="#1179B5" PreviewTextInput="Num_PreviewTextInput"></TextBox>
                             </DockPanel>
                         </Border>
                         <Border BorderBrush="#1276B1" Background="#009FF3" Width="400" Height="170" BorderThickness="2" CornerRadius="5">
                             <DockPanel LastChildFill="False">
-                                <TextBox Name="card_num" Foreground="White" DockPanel.Dock="Top" materialDesign:HintAssist.Hint="Card number" Height="30" Margin="30,30,30,10" CaretBrush="#FF005DFF" Background="#1179B5"></TextBox>
-                                <TextBox Name="card_MM" Foreground="White" DockPanel.Dock="Left" materialDesign:HintAssist.Hint="MM" Width="22" Height="25" Margin="30,0,5,20" CaretBrush="#FF005DFF" Background="#1179B5"></TextBox>
-                                <TextBox Name="card_YY" Foreground="White" DockPanel.Dock="Left" materialDesign:HintAssist.Hint="YY" Width="22" Height="25" Margin="5,0,30,20" CaretBrush="#FF005DFF" Background="#1179B5"></TextBox>
+                                <TextBox Name="card_num" MaxLength="19" Foreground="White" DockPanel.Dock="Top" materialDesign:HintAssist.Hint="Card number" Height="30" Margin="30,30,30,10" CaretBrush="#FF005DFF" Background="#1179B5" PreviewTextInput="Num_PreviewTextInput"></TextBox>
+                                <TextBox Name="card_MM" MaxLength="2" Foreground="White" DockPanel.Dock="Left" materialDesign:HintAssist.Hint="MM" Width="22" Height="25" Margin="30,0,5,20" CaretBrush="#FF005DFF" Background="#1179B5" PreviewTextInput="Num_PreviewTextInput"></TextBox>
+                                <TextBox Name="card_YY" MaxLength="2" Foreground="White" DockPanel.Dock="Left" materialDesign:HintAssist.Hint="YY" Width="22" Height="25" Margin="5,0,30,20" CaretBrush="#FF005DFF" Background="#1179B5" PreviewTextInput="Num_PreviewTextInput"></TextBox>
                             </DockPanel>
                         </Border>
                     </Grid>
-                    
+                    <DockPanel LastChildFill="False" VerticalAlignment="Center" Grid.Column="2">
+                        <Label DockPanel.Dock="Top" FontSize="16" FontWeight="Bold" Foreground="#27AAF0" Margin="30,30,30,10">Amount to be paid</Label>
+                        <controls:NumericUpDown HorizontalAlignment="Center" DockPanel.Dock="Top" Name="numeric_ammount" Value="100" MinValue="1" FontSize="18" Foreground="#27AAF0" MaxValue="50000" Height="30" ></controls:NumericUpDown>
+                        <Button Margin="30,10,30,20" Background="#FF27AAF0" BorderBrush="#FF27AAF0" DockPanel.Dock="Top" materialDesign:ButtonAssist.CornerRadius="12" Foreground="White" Click="ReplishBalance_Click">Replish balance</Button>
+                        <Button Margin="30,10,30,20" Background="#FF27AAF0" BorderBrush="#FF27AAF0" DockPanel.Dock="Top" materialDesign:ButtonAssist.CornerRadius="12" Foreground="White" Click="CancelButton_Click">Cancel</Button>
+                    </DockPanel>
                 </Grid>
             </materialDesign:TransitioningContent>
         </Grid>

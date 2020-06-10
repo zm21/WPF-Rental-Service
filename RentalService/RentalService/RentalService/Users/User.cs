@@ -7,11 +7,13 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Drawing;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace RentalService.Users
 {
     [Serializable]
-    public class User : IUser
+    public class User : IUser, INotifyPropertyChanged
     {
         public int ID { get; set; }
         public string Login { get; private set; }
@@ -30,6 +32,13 @@ namespace RentalService.Users
                 writer.Write(ID + 1);
         }
         public User() { }
+
+        [field: NonSerialized]
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
         public void Serialize()
         {
             BinaryFormatter binaryFormatter = new BinaryFormatter();
@@ -53,7 +62,7 @@ namespace RentalService.Users
             this.Balance = user.Balance;
         }
         public void ShowBalance() { Console.WriteLine($"Your balance: {Balance} UAH"); }
-        public void ReplishBalance(decimal balance) { Balance += balance; }
+        public void ReplishBalance(decimal balance) { Balance += balance; OnPropertyChanged(nameof(Balance)); }
         public void ChangePasswd(string new_passwd) { Passwd = new_passwd; }
         public void ChangeEmail(string new_email) { Email=new_email; }
         public void Pay(decimal ammount) { Balance -= ammount; }
