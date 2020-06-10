@@ -68,6 +68,7 @@
     <Compile Include="AdminMenu.xaml.cs">
       <DependentUpon>AdminMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IChildWindow.cs" />
     <Compile Include="RemoveUser.xaml.cs">
       <DependentUpon>RemoveUser.xaml</DependentUpon>
     </Compile>

@@ -21,6 +21,7 @@ namespace RentalService
     /// </summary>
     public partial class AdminMenu : Window
     {
+        private UserControl ActiveControl;
         private Admin admin;
         DispatcherTimer timer;
         public AdminMenu(Admin admin)
@@ -89,10 +90,39 @@ namespace RentalService
             this.Close();
         }
 
+        private void OpenUserControl(UserControl userControl)
+        {
+            if (userControl is RemoveUser)
+            {
+                (userControl as RemoveUser).Closing += CloseActiveControl;
+                (userControl as RemoveUser).OpenMsg += ShowMsg;
+            }
+            Desktop.Children.Clear();
+            RentalDesktop.Visibility = Visibility.Hidden;
+            Desktop.Children.Add(userControl);
+            ActiveControl = userControl;
+        }
         private void RemoveUser_Click(object sender, RoutedEventArgs e)
         {
-            RentalDesktop.Visibility = Visibility.Hidden;
-            Desktop.Children.Add(new RemoveUser());
+            if(!(ActiveControl is RemoveUser))
+                OpenUserControl(new RemoveUser());
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            CloseActiveControl();
+        }
+        private void ShowMsg(string title, string msg)
+        {
+            MsgBox msgBox = new MsgBox(title, msg);
+            msgBox.Owner = this;
+            msgBox.ShowDialog();
+        }
+        private void CloseActiveControl()
+        {
+            ActiveControl = null;
+            Desktop.Children.Clear();
+            RentalDesktop.Visibility = Visibility.Visible;
         }
     }
 }

@@ -34,7 +34,7 @@
                 <!--LOGIN-->
             <Grid Name="LOGIN">
                  <Grid HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10">
-                        <Button Click="TOSignUp_Click" Background="Transparent" BorderBrush="Transparent" Foreground="#FF27AAF0">SIGN UP</Button>
+                        <Button Click="TOSignUp_Click" Background="Transparent" BorderBrush="Transparent" Foreground="#FF27AAF0" VerticalAlignment="Top">SIGN UP</Button>
                         <materialDesign:PackIcon Kind="ArrowRight" Foreground="#FF27AAF0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
                  </Grid>
                     <DockPanel Grid.Row="1" Grid.ColumnSpan="2" LastChildFill="False" VerticalAlignment="Center">

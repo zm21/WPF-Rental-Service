@@ -10,7 +10,7 @@
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
-    <DockPanel>
+    <DockPanel Background="#C8E4F8">
         <DockPanel DockPanel.Dock="Top" LastChildFill="False" Background="#27AAF0">
             <Label Name="MsgTitle" VerticalAlignment="Center" Margin="10,0">Title</Label>
             <Button DockPanel.Dock="Right" BorderBrush="Transparent" Background="Transparent" Click="BtnMsgBoxClose_Click">

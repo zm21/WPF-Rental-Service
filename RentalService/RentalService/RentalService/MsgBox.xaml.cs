@@ -24,6 +24,7 @@ namespace RentalService
             InitializeComponent();
             MsgTitle.Content = title;
             Message.Text = message;
+            
         }
 
         private void BtnMsgBoxClose_Click(object sender, RoutedEventArgs e)

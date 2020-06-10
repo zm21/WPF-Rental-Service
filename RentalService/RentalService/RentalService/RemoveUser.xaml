@@ -16,8 +16,8 @@
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
                 <DockPanel LastChildFill="False" VerticalAlignment="Center" Grid.Column="1">
-                    <Label DockPanel.Dock="Top" FontSize="16" FontWeight="Bold" Foreground="#27AAF0" Margin="30,30,30,10">Deleting user</Label>
-                    <TextBox Name="logTxtBox_login" DockPanel.Dock="Top" materialDesign:HintAssist.Hint="User login" Height="30" Margin="30,10" CaretBrush="#FF005DFF">
+                    <Label DockPanel.Dock="Top" FontSize="16" FontWeight="Bold" Foreground="#27AAF0" Margin="30">Deleting user</Label>
+                    <TextBox Name="txtbox_userLogin" DockPanel.Dock="Top" materialDesign:HintAssist.Hint="User login" Height="30" Margin="30,10,30,20" CaretBrush="#FF005DFF">
                         <TextBox.Text>
                             <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
@@ -26,8 +26,8 @@
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
-                    <Button Margin="30,10" Background="#FF27AAF0" BorderBrush="#FF27AAF0" DockPanel.Dock="Top" materialDesign:ButtonAssist.CornerRadius="12" Foreground="White">Delete user</Button>
-                    <Button Margin="30,10" Background="#FF27AAF0" BorderBrush="#FF27AAF0" DockPanel.Dock="Top" materialDesign:ButtonAssist.CornerRadius="12" Foreground="White">Cancel</Button>
+                    <Button Margin="30,10,30,20" Background="#FF27AAF0" BorderBrush="#FF27AAF0" DockPanel.Dock="Top" materialDesign:ButtonAssist.CornerRadius="12" Foreground="White" Click="DeleteUser_Click">Delete user</Button>
+                    <Button Margin="30,10,30,20" Background="#FF27AAF0" BorderBrush="#FF27AAF0" DockPanel.Dock="Top" materialDesign:ButtonAssist.CornerRadius="12" Foreground="White" Click="Button_Click">Cancel</Button>
                 </DockPanel>
             </Grid>
         </materialDesign:TransitioningContent>

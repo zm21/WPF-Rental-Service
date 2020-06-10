@@ -110,10 +110,13 @@
             </DockPanel>
         </Grid>
         <Grid>
-            <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <DockPanel Name="RentalDesktop" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Label DockPanel.Dock="Top" Foreground="#27AAF0" FontFamily="Corbel Light" FontSize="84" >Rental Service</Label>
                 <Label Name="lb_time" DockPanel.Dock="Top" HorizontalAlignment="Center" Foreground="#27AAF0" FontSize="38" FontFamily="Yu Gothic UI Light"/>
                 <Label Name="lb_date" DockPanel.Dock="Top" HorizontalAlignment="Center" Foreground="#27AAF0" FontFamily="Yu Gothic UI Light" FontSize="26"></Label>
+            </DockPanel>
+            <DockPanel Name="Desktop">
+
             </DockPanel>
         </Grid>
     </DockPanel>

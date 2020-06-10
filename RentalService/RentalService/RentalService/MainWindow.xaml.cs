@@ -46,9 +46,6 @@ namespace RentalService
         {
             LOGIN.Visibility = Visibility.Hidden;
             SignUP.Visibility = Visibility.Visible;
-            MsgBox msgBox = new MsgBox("Test", "Some message");
-            msgBox.Owner = this;
-            msgBox.ShowDialog();
         }
 
         private void TOLogin_Click(object sender, RoutedEventArgs e)
