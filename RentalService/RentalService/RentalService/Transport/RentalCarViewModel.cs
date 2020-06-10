@@ -12,6 +12,8 @@ namespace RentalService.Transport
     {
         private ICollection<RentalCar> cars = new ObservableCollection<RentalCar>();
         public IEnumerable<RentalCar> Cars => cars;
+        private ICollection<RentalCar> filtredcars = new ObservableCollection<RentalCar>();
+        public IEnumerable<RentalCar> FiltredCars => filtredcars;
         public void DeserializeCars()
         {
             cars = RentalCar.DeserializeCars();
@@ -23,6 +25,19 @@ namespace RentalService.Transport
         public void UpdateCarsStatus()
         {
             RentalCar.UpdateCarsStatus(cars.ToList());
+        }
+        public void ClearFilteredCars() => filtredcars.Clear();
+        public void UnfilteredCars()
+        {
+            ClearFilteredCars();
+            foreach (var item in cars)
+            {
+                filtredcars.Add(item);
+            }
+        }
+        public void AddCarToFiltred(RentalCar car)
+        {
+            filtredcars.Add(car);
         }
     }
 }

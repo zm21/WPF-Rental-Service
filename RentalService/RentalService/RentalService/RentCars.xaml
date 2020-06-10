@@ -22,7 +22,7 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <DockPanel Margin="5" LastChildFill="False">
+                    <DockPanel Name="DockFilters" Margin="5" LastChildFill="False">
                         <Label DockPanel.Dock="Top" FontSize="18" FontWeight="Bold" Foreground="#27AAF0" Margin="0,10">Filters</Label>
                         <CheckBox Name="chb_available" DockPanel.Dock="Top" FontSize="16">Available</CheckBox>
                         <Border Height="1" DockPanel.Dock="Top" Background="#FF27AAF0" Margin="0,5"></Border>

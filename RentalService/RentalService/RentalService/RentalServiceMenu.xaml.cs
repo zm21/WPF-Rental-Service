@@ -149,7 +149,7 @@ namespace RentalService
 
         private void Btn_Cars_Click(object sender, RoutedEventArgs e)
         {
-            OpenUserControl(new RentCars());
+            OpenUserControl(new RentCars(rentalCarViewModel));
         }
     }
 }
