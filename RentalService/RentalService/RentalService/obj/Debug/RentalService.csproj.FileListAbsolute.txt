@@ -89,3 +89,5 @@ D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\Rent
 D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\bin\Debug\Xamarin.Forms.Xaml.pdb
 D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\bin\Debug\Xamarin.Forms.Xaml.xml
 D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\XamlC.stamp
+D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\UserRentedCars.g.cs
+D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\UserRentedCars.baml

@@ -153,6 +153,9 @@
       <DependentUpon>ReplishBalance.xaml</DependentUpon>
     </Compile>
     <Compile Include="Transport\RentalCarViewModel.cs" />
+    <Compile Include="UserRentedCars.xaml.cs">
+      <DependentUpon>UserRentedCars.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Users\RegisterModel.cs" />
     <Compile Include="Users\RegisterMViewModel.cs" />
     <Compile Include="Users\User.cs" />
@@ -199,6 +202,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ReplishBalance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserRentedCars.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -34,7 +34,7 @@
                         <Label DockPanel.Dock="Left" FontSize="18" Foreground="White">Cars</Label>
                     </DockPanel>
                 </Button>
-                <Button Padding="31,0,0,0" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0">
+                <Button Name="btn_myRentedCars" Padding="31,0,0,0" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0" Click="Btn_myRentedCars_Click">
                     <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
                         <materialDesign:PackIcon Height="24" Width="24"  Kind="KeyVariant" DockPanel.Dock="Left" Foreground="White" VerticalAlignment="Top" Margin="0,0,0,5"/>
                         <Label DockPanel.Dock="Left" FontSize="18" Foreground="White">My rented cars</Label>

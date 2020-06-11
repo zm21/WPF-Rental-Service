@@ -15,9 +15,9 @@
     <Model>Corolla</Model>
     <LicensePlate>BH1234CK</LicensePlate>
     <Type>Sedan</Type>
-    <Available>false</Available>
-    <AvailableFrom>2020-06-12T10:43:42.2953533+03:00</AvailableFrom>
-    <RentedID>32</RentedID>
+    <Available>true</Available>
+    <AvailableFrom>2020-06-11T11:33:55.2322186+03:00</AvailableFrom>
+    <RentedID>0</RentedID>
     <PricePerDay>339</PricePerDay>
   </RentalCar>
   <RentalCar>

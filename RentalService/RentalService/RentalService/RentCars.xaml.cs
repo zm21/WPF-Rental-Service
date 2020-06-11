@@ -29,8 +29,10 @@ namespace RentalService
         {
             InitializeComponent();
             this.rentalCarViewModel = rentalCarViewModel;
+            this.rentalCarViewModel.DeserializeCars();
             this.rentalCarViewModel.UnfilteredCars();
             this.user = user;
+            RentalCar.UpdateCarsStatus(this.rentalCarViewModel.Cars.ToList());
         }
 
         public event ClosingDelegate Closing;
@@ -104,6 +106,7 @@ namespace RentalService
                 else
                 {
                     ShowMsg("Rental error", "The selected car is not available");
+                    RentalCar.UpdateCarsStatus(this.rentalCarViewModel.Cars.ToList());
                 }
             }
             else

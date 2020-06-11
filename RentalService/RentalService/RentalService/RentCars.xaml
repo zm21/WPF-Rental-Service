@@ -39,7 +39,7 @@
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn DisplayMemberBinding="{Binding Available}"  Header="Availabe"/>
-                                <GridViewColumn DisplayMemberBinding="{Binding AvailableFrom, StringFormat='{}{0:dd.MM.yyyy}'}" Header="Available from"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding AvailableFrom}" Header="Available from"/>
                                 <GridViewColumn DisplayMemberBinding="{Binding PricePerDay}" Header="Price per day"/>
                                 <GridViewColumn DisplayMemberBinding="{Binding Brand}" Header="Brand"/>
                                 <GridViewColumn DisplayMemberBinding="{Binding Model}" Header="Model"/>

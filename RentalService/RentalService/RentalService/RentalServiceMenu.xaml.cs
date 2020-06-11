@@ -155,5 +155,11 @@ namespace RentalService
             if (!(ActiveControl is RentCars))
                 OpenUserControl(new RentCars(rentalCarViewModel, user));
         }
+
+        private void Btn_myRentedCars_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(ActiveControl is UserRentedCars))
+                OpenUserControl(new UserRentedCars(rentalCarViewModel, user));
+        }
     }
 }

@@ -11,9 +11,17 @@ namespace RentalService.Transport
     public class RentalCarViewModel
     {
         private ICollection<RentalCar> cars = new ObservableCollection<RentalCar>();
+
         public IEnumerable<RentalCar> Cars => cars;
         private ICollection<RentalCar> filtredcars = new ObservableCollection<RentalCar>();
         public IEnumerable<RentalCar> FiltredCars => filtredcars;
+
+        private ICollection<RentalCar> userRentedCars = new ObservableCollection<RentalCar>();
+        public IEnumerable<RentalCar> UserRentedCars => userRentedCars;
+
+        private ICollection<RentalCar> filtredUserCars = new ObservableCollection<RentalCar>();
+        public IEnumerable<RentalCar> FiltredUserCars => filtredUserCars;
+
         public RentalCar SelectedCar { get; set; }
         public void DeserializeCars()
         {
@@ -27,7 +35,11 @@ namespace RentalService.Transport
         {
             RentalCar.UpdateCarsStatus(cars.ToList());
         }
+
         public void ClearFilteredCars() => filtredcars.Clear();
+
+        public void ClearFiltredUserCars() => filtredUserCars.Clear();
+
         public void UnfilteredCars()
         {
             ClearFilteredCars();
@@ -36,9 +48,34 @@ namespace RentalService.Transport
                 filtredcars.Add(item);
             }
         }
+
         public void AddCarToFiltred(RentalCar car)
         {
             filtredcars.Add(car);
+        }
+
+        public void LoadUserRentedCars(int userID)
+        {
+            userRentedCars.Clear();
+            foreach (var item in cars)
+            {
+                if(item.RentedID==userID)
+                    userRentedCars.Add(item);
+            }
+        }
+
+        public void UnfilteredUserCars()
+        {
+            ClearFiltredUserCars();
+            foreach (var item in userRentedCars)
+            {
+                filtredUserCars.Add(item);
+            }
+        }
+
+        public void AddUserCarToFiltred(RentalCar car)
+        {
+            filtredUserCars.Add(car);
         }
     }
 }
