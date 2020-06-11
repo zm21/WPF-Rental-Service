@@ -1,6 +1,7 @@
 ﻿using RentalService;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ namespace RentCar.Transport
         public DateTime AvailableFrom { get; set; }
         public int RentedID { get; set; }
         public int PricePerDay { get; set; }
+
         public static List<RentalCar> DeserializeCars()
         {
             List<RentalCar> rentalCars = new List<RentalCar>();

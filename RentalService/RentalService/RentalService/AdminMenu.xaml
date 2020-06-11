@@ -34,7 +34,7 @@
                         <Label DockPanel.Dock="Left" FontSize="18" Foreground="White">Cars</Label>
                     </DockPanel>
                 </Button>
-                <Button Padding="31,0,0,0" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0">
+                <Button Name="btn_AddCars" Padding="31,0,0,0" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0" Click="Btn_AddCars_Click">
                     <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
                         <materialDesign:PackIcon Height="24" Width="24"  Kind="ViewGridAdd" DockPanel.Dock="Left" Foreground="White" VerticalAlignment="Top" Margin="0,0,0,5"/>
                         <Label DockPanel.Dock="Left" FontSize="18" Foreground="White">Add cars</Label>
@@ -93,8 +93,10 @@
                 <Label Name="lb_time" DockPanel.Dock="Top" HorizontalAlignment="Center" Foreground="#27AAF0" FontSize="38" FontFamily="Yu Gothic UI Light"/>
                 <Label Name="lb_date" DockPanel.Dock="Top" HorizontalAlignment="Center" Foreground="#27AAF0" FontFamily="Yu Gothic UI Light" FontSize="26"></Label>
             </DockPanel>
-            <DockPanel Name="Desktop">
-                
+            <DockPanel>
+                <Grid Name="Desktop">
+                    
+                </Grid>
             </DockPanel>
         </Grid>
     </DockPanel>

@@ -1,5 +1,6 @@
 ﻿using RentalService.Transport;
 using RentalService.Users;
+using RentCar.Transport;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -136,6 +137,12 @@ namespace RentalService
         {
             if(!(ActiveControl is AdminCarsMenu))
                 OpenUserControl(new AdminCarsMenu(rentalCarViewModel));
+        }
+
+        private void Btn_AddCars_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(ActiveControl is AddCar))
+                OpenUserControl(new AddCar(rentalCarViewModel));
         }
     }
 }

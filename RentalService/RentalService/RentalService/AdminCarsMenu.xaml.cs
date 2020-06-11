@@ -40,7 +40,7 @@ namespace RentalService
 
         public void ShowMsg(string title, string msg) => OpenMsg.Invoke(title, msg);
 
-        private void Find_Click(object sender, RoutedEventArgs e)
+        public void FiltrCars()
         {
             rentalCarViewModel.ClearFilteredCars();
             if (isAllFiltersUnchecked())
@@ -77,6 +77,10 @@ namespace RentalService
                 }
             }
         }
+        private void Find_Click(object sender, RoutedEventArgs e)
+        {
+            FiltrCars();
+        }
 
         private bool isAllFiltersUnchecked()
         {
@@ -95,7 +99,24 @@ namespace RentalService
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-
+            if (RentalCardGrid.SelectedItem != null)
+            {
+                if (rentalCarViewModel.SelectedCar.Available)
+                {
+                    rentalCarViewModel.CarToEditOrCreate = rentalCarViewModel.SelectedCar;
+                    EditCar editCarForm = new EditCar(rentalCarViewModel, ((Grid)this.Parent), this);
+                    editCarForm.OpenMsg += ShowMsg;
+                    ((Grid)this.Parent).Children.Add(editCarForm);
+                }
+                else
+                {
+                    ShowMsg("Editing error", "The selected car is not available");
+                }
+            }
+            else
+            {
+                ShowMsg("Editing error", "You have not chosen the car you want to remove");
+            }
         }
 
         private void Remove_Click(object sender, RoutedEventArgs e)

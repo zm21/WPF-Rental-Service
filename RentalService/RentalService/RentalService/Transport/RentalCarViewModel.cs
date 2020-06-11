@@ -23,6 +23,14 @@ namespace RentalService.Transport
         public IEnumerable<RentalCar> FiltredUserCars => filtredUserCars;
 
         public RentalCar SelectedCar { get; set; }
+        public RentalCar CarToEditOrCreate { get; set; }
+
+        public void AddNewCar(RentalCar car) => cars.Add(car);
+
+        public RentalCarViewModel()
+        {
+            CarToEditOrCreate = new RentalCar();
+        }
         public void DeserializeCars()
         {
             cars = RentalCar.DeserializeCars();

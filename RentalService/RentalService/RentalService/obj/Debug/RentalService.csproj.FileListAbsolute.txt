@@ -93,3 +93,7 @@ D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\Rent
 D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\UserRentedCars.baml
 D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\AdminCarsMenu.g.cs
 D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\AdminCarsMenu.baml
+D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\EditCar.g.cs
+D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\EditCar.baml
+D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\AddCar.g.cs
+D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\obj\Debug\AddCar.baml
