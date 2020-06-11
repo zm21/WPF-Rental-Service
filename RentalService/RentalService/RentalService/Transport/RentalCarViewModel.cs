@@ -77,5 +77,9 @@ namespace RentalService.Transport
         {
             filtredUserCars.Add(car);
         }
+        public void RemoveCar(RentalCar car)
+        {
+            cars.Remove(car);
+        }
     }
 }

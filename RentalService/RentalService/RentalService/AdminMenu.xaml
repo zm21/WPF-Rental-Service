@@ -14,7 +14,7 @@
         <DockPanel DockPanel.Dock="Left" Background="#27AAF0" LastChildFill="False">
             <Label DockPanel.Dock="Top" Margin="10,0" Foreground="#DDFFFFFF" FontFamily="Corbel Light" FontSize="38" >Rental</Label>
             <Label Margin="10,0" Foreground="#DDFFFFFF" FontFamily="Corbel Light" FontSize="38" DockPanel.Dock="Top" >Service</Label>
-            <Button DockPanel.Dock="Top" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0,4,0,0" Click="Button_Click">
+            <Button DockPanel.Dock="Top" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0,4,0,0" Click="ButtonHome_Click">
                 <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
                     <materialDesign:PackIcon Height="24" Width="24"  Kind="HomeOutline" DockPanel.Dock="Left" Foreground="White" VerticalAlignment="Top" Margin="0,5,0,0"/>
                     <Label DockPanel.Dock="Left" FontSize="18" Foreground="White">Home</Label>
@@ -28,7 +28,7 @@
             </Button>
             <StackPanel DockPanel.Dock="Top" Name="SubRentMenu" Margin="0" Background="#FF009FF3">
                 <materialDesign:TransitionEffect ></materialDesign:TransitionEffect>
-                <Button Padding="30,0,0,0" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0">
+                <Button Name="btn_Cars" Padding="30,0,0,0" HorizontalContentAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Height="45" Margin="0" Click="Btn_Cars_Click">
                     <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
                         <materialDesign:PackIcon Height="24" Width="24"  Kind="FileDocumentBoxSearchOutline" DockPanel.Dock="Left" Foreground="White" VerticalAlignment="Top" Margin="0,5,0,0"/>
                         <Label DockPanel.Dock="Left" FontSize="18" Foreground="White">Cars</Label>

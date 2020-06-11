@@ -1,4 +1,5 @@
-﻿using RentalService.Users;
+﻿using RentalService.Transport;
+using RentalService.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace RentalService
         private UserControl ActiveControl;
         private Admin admin;
         DispatcherTimer timer;
+        private RentalCarViewModel rentalCarViewModel;
         public AdminMenu(Admin admin)
         {
             InitializeComponent();
@@ -34,6 +36,11 @@ namespace RentalService
             Timer_Tick(this, EventArgs.Empty);
             HideSubMenu();
             this.admin = admin;
+
+            rentalCarViewModel = new RentalCarViewModel();
+            rentalCarViewModel.DeserializeCars();
+            rentalCarViewModel.UpdateCarsStatus();
+            Desktop.DataContext = rentalCarViewModel;
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -92,25 +99,15 @@ namespace RentalService
 
         private void OpenUserControl(UserControl userControl)
         {
-            if (userControl is RemoveUser)
+            if (userControl is IChildWindow)
             {
-                (userControl as RemoveUser).Closing += CloseActiveControl;
-                (userControl as RemoveUser).OpenMsg += ShowMsg;
+                (userControl as IChildWindow).Closing += CloseActiveControl;
+                (userControl as IChildWindow).OpenMsg += ShowMsg;
             }
             Desktop.Children.Clear();
             RentalDesktop.Visibility = Visibility.Hidden;
             Desktop.Children.Add(userControl);
             ActiveControl = userControl;
-        }
-        private void RemoveUser_Click(object sender, RoutedEventArgs e)
-        {
-            if(!(ActiveControl is RemoveUser))
-                OpenUserControl(new RemoveUser());
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            CloseActiveControl();
         }
         private void ShowMsg(string title, string msg)
         {
@@ -123,6 +120,22 @@ namespace RentalService
             ActiveControl = null;
             Desktop.Children.Clear();
             RentalDesktop.Visibility = Visibility.Visible;
+        }
+        private void RemoveUser_Click(object sender, RoutedEventArgs e)
+        {
+            if(!(ActiveControl is RemoveUser))
+                OpenUserControl(new RemoveUser());
+        }
+
+        private void ButtonHome_Click(object sender, RoutedEventArgs e)
+        {
+            CloseActiveControl();
+        }
+
+        private void Btn_Cars_Click(object sender, RoutedEventArgs e)
+        {
+            if(!(ActiveControl is AdminCarsMenu))
+                OpenUserControl(new AdminCarsMenu(rentalCarViewModel));
         }
     }
 }

@@ -127,6 +127,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdminCarsMenu.xaml.cs">
+      <DependentUpon>AdminCarsMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AdminMenu.xaml.cs">
       <DependentUpon>AdminMenu.xaml</DependentUpon>
     </Compile>
@@ -159,6 +162,10 @@
     <Compile Include="Users\RegisterModel.cs" />
     <Compile Include="Users\RegisterMViewModel.cs" />
     <Compile Include="Users\User.cs" />
+    <Page Include="AdminCarsMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AdminMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
