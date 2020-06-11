@@ -1,13 +1,33 @@
 <?xml version="1.0"?>
 <ArrayOfRentalCar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <RentalCar>
-    <Brand>Audi</Brand>
-    <Model>A33</Model>
-    <LicensePlate>AA1234AA</LicensePlate>
+    <Brand>Tesla</Brand>
+    <Model>X</Model>
+    <LicensePlate>BK8080BH</LicensePlate>
+    <Type>Electric car</Type>
+    <Available>true</Available>
+    <AvailableFrom>2020-05-16T16:43:29.5372401+03:00</AvailableFrom>
+    <RentedID>0</RentedID>
+    <PricePerDay>990</PricePerDay>
+  </RentalCar>
+  <RentalCar>
+    <Brand>Toyota</Brand>
+    <Model>Corolla</Model>
+    <LicensePlate>BH1234CK</LicensePlate>
     <Type>Sedan</Type>
     <Available>true</Available>
-    <AvailableFrom>2020-05-14T02:23:18.3432069+03:00</AvailableFrom>
+    <AvailableFrom>2020-05-14T02:22:30.3760663+03:00</AvailableFrom>
     <RentedID>0</RentedID>
+    <PricePerDay>339</PricePerDay>
+  </RentalCar>
+  <RentalCar>
+    <Brand>Audi</Brand>
+    <Model>A3</Model>
+    <LicensePlate>AA1234AA</LicensePlate>
+    <Type>Sedan</Type>
+    <Available>false</Available>
+    <AvailableFrom>2020-06-12T16:51:45.2027974+03:00</AvailableFrom>
+    <RentedID>32</RentedID>
     <PricePerDay>359</PricePerDay>
   </RentalCar>
   <RentalCar>
@@ -141,13 +161,13 @@
     <PricePerDay>15000</PricePerDay>
   </RentalCar>
   <RentalCar>
-    <Brand>Toyotaa</Brand>
-    <Model>Corolla</Model>
-    <LicensePlate>BH1234CK</LicensePlate>
-    <Type>Sedan</Type>
+    <Brand>Tesla</Brand>
+    <Model>Cybertruck</Model>
+    <LicensePlate>BK5566BC</LicensePlate>
+    <Type>Electric car</Type>
     <Available>true</Available>
-    <AvailableFrom>2020-06-11T14:49:38.5391337+03:00</AvailableFrom>
+    <AvailableFrom>2020-06-11T16:49:55.0722188+03:00</AvailableFrom>
     <RentedID>0</RentedID>
-    <PricePerDay>339</PricePerDay>
+    <PricePerDay>1500</PricePerDay>
   </RentalCar>
 </ArrayOfRentalCar>

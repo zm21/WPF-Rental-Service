@@ -34,6 +34,18 @@ namespace RentalService.Users
         public User() { }
 
         [field: NonSerialized]
+        private string avatar_path;
+        public string AvatarPath { get => avatar_path;
+            set
+            {
+                if(avatar_path!=value)
+                {
+                    avatar_path = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\App.xaml
-131058877337
+13-1634600595
 
-31-2146872392
+31-1052003087
 144-1851653685
-EditCar.xaml;AdminCarsMenu.xaml;AdminMenu.xaml;ChangeEmail.xaml;ChangePassword.xaml;AddCar.xaml;MainWindow.xaml;MsgBox.xaml;RemoveUser.xaml;RentalServiceMenu.xaml;RentCars.xaml;ReplishBalance.xaml;UserRentedCars.xaml;
+AdminMenuRentalService\EditCar.xaml;AdminMenuRentalService\AdminCarsMenu.xaml;AdminMenuRentalService\AdminMenu.xaml;MenuRentalService\ChangeEmail.xaml;MenuRentalService\ChangePassword.xaml;AdminMenuRentalService\AddCar.xaml;LoginAndSignUp\LoginSignUp.xaml;MsgBox.xaml;AdminMenuRentalService\RemoveUser.xaml;MenuRentalService\RentalServiceMenu.xaml;MenuRentalService\RentCars.xaml;MenuRentalService\ReplishBalance.xaml;MenuRentalService\UserRentedCars.xaml;
 
-True
+False
 

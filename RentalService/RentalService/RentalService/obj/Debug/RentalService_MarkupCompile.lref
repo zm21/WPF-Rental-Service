@@ -1,16 +1,16 @@
 ﻿
 FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\App.xaml;;
-FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\AdminCarsMenu.xaml;;
-FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\AdminMenu.xaml;;
-FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\ChangeEmail.xaml;;
-FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\ChangePassword.xaml;;
-FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\EditCar.xaml;;
-FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\MainWindow.xaml;;
+FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\AdminMenuRentalService\EditCar.xaml;;
+FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\AdminMenuRentalService\AdminCarsMenu.xaml;;
+FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\AdminMenuRentalService\AdminMenu.xaml;;
+FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\MenuRentalService\ChangeEmail.xaml;;
+FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\MenuRentalService\ChangePassword.xaml;;
+FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\AdminMenuRentalService\AddCar.xaml;;
+FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\LoginAndSignUp\LoginSignUp.xaml;;
 FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\MsgBox.xaml;;
-FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\RemoveUser.xaml;;
-FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\RentalServiceMenu.xaml;;
-FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\RentCars.xaml;;
-FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\ReplishBalance.xaml;;
-FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\UserRentedCars.xaml;;
-FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\AddCar.xaml;;
+FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\AdminMenuRentalService\RemoveUser.xaml;;
+FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\MenuRentalService\RentalServiceMenu.xaml;;
+FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\MenuRentalService\RentCars.xaml;;
+FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\MenuRentalService\ReplishBalance.xaml;;
+FD:\Mikola\ШАГ\3-й semester\[WPF]course work\RentalService\RentalService\RentalService\MenuRentalService\UserRentedCars.xaml;;
 
