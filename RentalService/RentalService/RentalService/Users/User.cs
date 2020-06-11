@@ -65,6 +65,6 @@ namespace RentalService.Users
         public void ReplishBalance(decimal balance) { Balance += balance; OnPropertyChanged(nameof(Balance)); }
         public void ChangePasswd(string new_passwd) { Passwd = new_passwd; }
         public void ChangeEmail(string new_email) { Email=new_email; }
-        public void Pay(decimal ammount) { Balance -= ammount; }
+        public void Pay(decimal ammount) { Balance -= ammount; OnPropertyChanged(nameof(Balance)); }
     }
 }

@@ -14,6 +14,7 @@ namespace RentalService.Transport
         public IEnumerable<RentalCar> Cars => cars;
         private ICollection<RentalCar> filtredcars = new ObservableCollection<RentalCar>();
         public IEnumerable<RentalCar> FiltredCars => filtredcars;
+        public RentalCar SelectedCar { get; set; }
         public void DeserializeCars()
         {
             cars = RentalCar.DeserializeCars();

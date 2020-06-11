@@ -1,4 +1,6 @@
 ﻿using RentalService.Transport;
+using RentalService.Users;
+using RentCar.Transport;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,18 +21,28 @@ namespace RentalService
     /// <summary>
     /// Interaction logic for RentCars.xaml
     /// </summary>
-    public partial class RentCars : UserControl
+    public partial class RentCars : UserControl, IChildWindow
     {
         RentalCarViewModel rentalCarViewModel;
-        public RentCars(RentalCarViewModel rentalCarViewModel)
+        User user;
+        public RentCars(RentalCarViewModel rentalCarViewModel, User user)
         {
             InitializeComponent();
-            this.rentalCarViewModel = new RentalCarViewModel();
+            this.rentalCarViewModel = rentalCarViewModel;
             this.rentalCarViewModel.UnfilteredCars();
+            this.user = user;
         }
+
+        public event ClosingDelegate Closing;
+        public event MessageDelegate OpenMsg;
+
+        public void Close() => Closing.Invoke();
+
+        public void ShowMsg(string title, string msg) => OpenMsg.Invoke(title, msg);
 
         private void Find_Click(object sender, RoutedEventArgs e)
         {
+            rentalCarViewModel.ClearFilteredCars();
             if (isAllFiltersUnchecked())
             {
                 rentalCarViewModel.UnfilteredCars();
@@ -68,7 +80,36 @@ namespace RentalService
 
         private void Rent_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (RentalCardGrid.SelectedItem!=null)
+            {
+                if (rentalCarViewModel.SelectedCar.Available)
+                {
+                    if (user.Balance >= numeric_numOfDays.Value * rentalCarViewModel.SelectedCar.PricePerDay)
+                    {
+                        rentalCarViewModel.SelectedCar.AvailableFrom = DateTime.Now;
+                        rentalCarViewModel.SelectedCar.AvailableFrom = rentalCarViewModel.SelectedCar.AvailableFrom.AddDays((int)numeric_numOfDays.Value);
+                        rentalCarViewModel.SelectedCar.Available = false;
+                        rentalCarViewModel.SelectedCar.RentedID = user.ID;
+                        user.Pay(rentalCarViewModel.SelectedCar.PricePerDay * numeric_numOfDays.Value);
+                        rentalCarViewModel.SerializeCars();
+                        user.Serialize();
+                        Find_Click(sender, e);
+                        ShowMsg("Rental success", "The car is successfully rented");
+                    }
+                    else
+                    {
+                        ShowMsg("Rental error", "There are not enough funds on your balance for this rent");
+                    }
+                }
+                else
+                {
+                    ShowMsg("Rental error", "The selected car is not available");
+                }
+            }
+            else
+            {
+                ShowMsg("Rental error", "You have not chosen the car you want to rent");
+            }
         }
 
         private bool isAllFiltersUnchecked()

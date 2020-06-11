@@ -122,7 +122,8 @@ namespace RentalService
 
         private void Btn_ChangeEmail_Click(object sender, RoutedEventArgs e)
         {
-            OpenUserControl(new ChangeEmail(user));
+            if (!(ActiveControl is ChangeEmail))
+                OpenUserControl(new ChangeEmail(user));
         }
         private void OpenUserControl(UserControl userControl)
         {
@@ -139,17 +140,20 @@ namespace RentalService
 
         private void Btn_ChangePasswd_Click(object sender, RoutedEventArgs e)
         {
-            OpenUserControl(new ChangePassword(user));
+            if(!(ActiveControl is ChangePassword))
+                OpenUserControl(new ChangePassword(user));
         }
 
         private void Btn_ReplishBalance_Click(object sender, RoutedEventArgs e)
         {
-            OpenUserControl(new ReplishBalance(user));
+            if (!(ActiveControl is ReplishBalance))
+                OpenUserControl(new ReplishBalance(user));
         }
 
         private void Btn_Cars_Click(object sender, RoutedEventArgs e)
         {
-            OpenUserControl(new RentCars(rentalCarViewModel));
+            if (!(ActiveControl is RentCars))
+                OpenUserControl(new RentCars(rentalCarViewModel, user));
         }
     }
 }

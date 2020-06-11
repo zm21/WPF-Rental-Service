@@ -35,7 +35,7 @@
                         <CheckBox Name="chb_sedan" Margin="0,5" DockPanel.Dock="Top" FontSize="16">Sedan</CheckBox>
                         <Border Height="1" DockPanel.Dock="Top" Background="#FF27AAF0" Margin="0,5"></Border>
                     </DockPanel>
-                    <ListView Grid.Column="1" ItemsSource="{Binding Cars}">
+                    <ListView Name="RentalCardGrid" Grid.Column="1" ItemsSource="{Binding FiltredCars}" SelectedItem="{Binding SelectedCar, Mode=OneWayToSource}">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn DisplayMemberBinding="{Binding Available}"  Header="Availabe"/>
