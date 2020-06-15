@@ -26,7 +26,7 @@
         </Border>
         <DockPanel LastChildFill="False" VerticalAlignment="Center" HorizontalAlignment="Stretch">
             <Label Margin="50,0" Foreground="#DDFFFFFF" FontFamily="Corbel Light" FontSize="48" DockPanel.Dock="Top" >Welcome to</Label>
-            <Label Margin="50,0" Foreground="#DDFFFFFF" FontSize="48" FontWeight="Bold" FontFamily="Segoe UI Symbol" DockPanel.Dock="Top">Rental Serivce </Label>
+            <Label Margin="50,0" Foreground="#DDFFFFFF" FontSize="48" FontWeight="Bold" FontFamily="Segoe UI Symbol" DockPanel.Dock="Top">Rental Service </Label>
             <Label Margin="50,0" Foreground="#DDFFFFFF" FontFamily="Corbel Light" FontSize="18" DockPanel.Dock="Top" >The best service for car rental</Label>
         </DockPanel>
         <DockPanel Grid.Column="1">

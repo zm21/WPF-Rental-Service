@@ -15,20 +15,20 @@
     <Model>Corolla</Model>
     <LicensePlate>BH1234CK</LicensePlate>
     <Type>Sedan</Type>
-    <Available>true</Available>
-    <AvailableFrom>2020-05-14T02:22:30.3760663+03:00</AvailableFrom>
-    <RentedID>0</RentedID>
+    <Available>false</Available>
+    <AvailableFrom>2020-06-16T17:43:18.7425462+03:00</AvailableFrom>
+    <RentedID>33</RentedID>
     <PricePerDay>339</PricePerDay>
   </RentalCar>
   <RentalCar>
-    <Brand>Audi</Brand>
-    <Model>A3</Model>
-    <LicensePlate>AA1234AA</LicensePlate>
-    <Type>Sedan</Type>
-    <Available>false</Available>
-    <AvailableFrom>2020-06-12T16:51:45.2027974+03:00</AvailableFrom>
-    <RentedID>32</RentedID>
-    <PricePerDay>359</PricePerDay>
+    <Brand>Tesla</Brand>
+    <Model>Model 3</Model>
+    <LicensePlate>BK7934BH</LicensePlate>
+    <Type>Electric car</Type>
+    <Available>true</Available>
+    <AvailableFrom>2020-06-15T18:42:24.8458882+03:00</AvailableFrom>
+    <RentedID>0</RentedID>
+    <PricePerDay>1000</PricePerDay>
   </RentalCar>
   <RentalCar>
     <Brand>Mercedes</Brand>
@@ -115,9 +115,9 @@
     <Model>S</Model>
     <LicensePlate>BK3453AA</LicensePlate>
     <Type>Electric car</Type>
-    <Available>true</Available>
-    <AvailableFrom>2020-05-14T14:00:02.8330969+03:00</AvailableFrom>
-    <RentedID>0</RentedID>
+    <Available>false</Available>
+    <AvailableFrom>2020-06-16T18:38:38.0488069+03:00</AvailableFrom>
+    <RentedID>34</RentedID>
     <PricePerDay>800</PricePerDay>
   </RentalCar>
   <RentalCar>
@@ -162,12 +162,12 @@
   </RentalCar>
   <RentalCar>
     <Brand>Tesla</Brand>
-    <Model>Cybertruck</Model>
-    <LicensePlate>BK5566BC</LicensePlate>
+    <Model>Model 3</Model>
+    <LicensePlate>BK7934BH</LicensePlate>
     <Type>Electric car</Type>
     <Available>true</Available>
-    <AvailableFrom>2020-06-11T16:49:55.0722188+03:00</AvailableFrom>
+    <AvailableFrom>2020-06-15T18:42:24.8458882+03:00</AvailableFrom>
     <RentedID>0</RentedID>
-    <PricePerDay>1500</PricePerDay>
+    <PricePerDay>1000</PricePerDay>
   </RentalCar>
 </ArrayOfRentalCar>
